@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Heading examples</title>
+  <link rel="stylesheet" href="../common/example.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1 class="saharian-debug-h1">Heading examples</h1>
+  <p>Here you can find different heading examples with various accessibility degrees, implemented both by using the
+    native HTML Element and the WAI-ARIA specification.</p>
+
+  <section class="saharian-debug-correct">
+    <h2 class="saharian-debug-h2">Plain HTML</h2>
+    <p class="help saharian-debug-explanation">
+      These examples show how to implement headings using the available native HTMl elements.
+    </p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+        <h1>First level heading example</h1>
+        <h2>Second level heading example</h2>
+        <h3>Third level heading example</h3>
+        <h4>Fourth level heading example</h4>
+        <h5>Fifth level heading example</h5>
+        <h6>Sixth level heading example</h6>
+      </div>
+    </div>
+  </section>
+
+  <section class="saharian-debug-correct">
+    <h2 class="saharian-debug-h2">Correct ARIA headings</h2>
+    <p class="help saharian-debug-explanation">
+      This is a correct implementation of various heading elements leveraging attributes from the WAI-ARIA
+      specification. Please note that you can reach much deeper nesting levels than
+      it is possible with HTML elements, but this is <em>strongly</em> discouraged.</p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+        <span role="heading" aria-level="1" class="heading h1">First Level heading example</span>
+        <span role="heading" aria-level="2" class="heading h2">Second Level heading example</span>
+        <span role="heading" aria-level="3" class="heading h3">Third Level heading example</span>
+        <span role="heading" aria-level="4" class="heading h4">Fourth Level heading example</span>
+        <span role="heading" aria-level="5" class="heading h5">Fifth Level heading example</span>
+        <span role="heading" aria-level="6" class="heading h6">Sixth Level heading example</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="saharian-debug-correct">
+    <h2 class="saharian-debug-h2">Unusual heading examples</h2>
+    <p class="help saharian-debug-explanation">
+      Here are some heading examples implemented using the WAI-ARIA specification. While technically correct, these
+      examples exhibit unusual attribute values whose usage is
+      <strong>strongly</strong> discouraged.
+    </p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+        <span role="heading" aria-level="42" class="heading h42">Forty-second Level heading example</span>
+        <span role="heading" aria-level="255" class="heading h255">Twohundredfiftyfifth Level heading example</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="saharian-debug-wrong">
+    <h2 class="saharian-debug-h2">Inaccessible heading examples</h2>
+    <p class="help saharian-debug-explanation">
+      These are some inaccessible heading implementation examples, as they do not
+      expose any "heading" semantics to assistive technologies.</p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+        <span class="heading h1">Inaccessible First Level heading example</span>
+        <span class="heading h2">Inaccessible Second Level heading example</span>
+        <span class="heading h3">Inaccessible Third Level heading example</span>
+        <span class="heading h4">Inaccessible Fourth Level heading example</span>
+        <span class="heading h5">Inaccessible Fifth Level heading example</span>
+        <span class="heading h6">Inaccessible Sixth Level heading example</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="saharian-debug-wrong">
+    <h2 class="saharian-debug-h2">Heading example with unspecified aria-level</h2>
+    <p class="help saharian-debug-explanation">
+      This is a level 3 heading implementation for which the
+      <code>aria-level</code> is not specified; note that
+      assistive technologies are expected to assume <code>aria-level</code> to be <em>2</em> when not specified.
+    </p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+        <span role="heading" class="heading h3">Third level heading with aria-level not specified</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="saharian-debug-wrong">
+    <h2 class="saharian-debug-h2">Heading with aria-level 0</h2>
+    <p class="help saharian-debug-explanation">
+      This is a messed up level 2 heading implementation, as it specifies the value <em>0</em> for its
+      <code>aria-level</code> attribute.
+    </p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+        <span role="heading" aria-level="0" class="heading h2">Second level heading with aria-level 0</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="saharian-debug-wrong">
+    <h2 class="saharian-debug-h2">Heading with aria-level -1</h2>
+    <p class="help saharian-debug-explanation">
+      This is a messy level 4 heading implementation, as it specifies the value <em>-1</em> for its
+      <code>aria-level</code> attribute.
+    </p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+        <span role="heading" aria-level="-1" class="heading h4">Forth level heading with aria-level -1</span>
+      </div>
+    </div>
+  </section>
+
+
+  <script src="../common/example.js"></script>
+</body>
+
+</html>

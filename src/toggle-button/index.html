@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>toggle button examples</title>
+  <link rel="stylesheet" href="../common/example.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1 class="saharian-debug-h1">toggle button examples</h1>
+  <p>Here you can find different toggle button examples with various accessibility degrees, implemented both by using
+    native HTML Elements and attributes from the WAI-ARIA specification.</p>
+
+  <section class="saharian-debug-correct">
+    <h2 class="saharian-debug-h2">Plain HTML</h2>
+    <p class="help saharian-debug-explanation">
+      This toggle button implementation uses native HTML elements.
+    </p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+        <form>
+          <input type="checkbox" title="Mute audio">
+        </form>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="saharian-debug-correct">
+    <h2 class="saharian-debug-h2">Hybrid implementation</h2>
+    <p class="help saharian-debug-explanation">
+      This is an hybrid toggle button implementation, as it uses the native HTML button element combined with the
+      <code>aria-pressed</code> attribute from the WAI-ARIA specification.
+    </p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+        <button aria-pressed="false">Mute audio</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="saharian-debug-correct">
+    <h2 class="saharian-debug-h2">Correct ARIA toggle button</h2>
+    <p class="help saharian-debug-explanation">
+      This is a correct toggle button implemented by using attributes from the WAI-ARIA specification.
+    </p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+        <span class="toggleButton" role="button" aria-pressed="false" tabindex="0">Mute audio</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="saharian-debug-wrong">
+    <h2 class="saharian-debug-h2">Messy toggle-button</h2>
+    <p class="help saharian-debug-explanation">
+      This is a messed up toggle button implementation, as it reports its state updates leveraging the
+      <code>aria-checked</code> attribute instead of <code>aria-pressed</code>.
+    </p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+        <span class="toggleButton" role="button" aria-checked="false" tabindex="0">Mute audio</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="saharian-debug-wrong">
+    <h2 class="saharian-debug-h2">Static toggle-button</h2>
+    <p class="help saharian-debug-explanation">
+      This is a static toggle button implementation, as it does not report its state updates to assistive technologies.
+    </p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+        <span class="toggleButton static" role="button" aria-pressed="false">Mute audio</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="saharian-debug-wrong">
+    <h2 class="saharian-debug-h2">Incomplete ARIA</h2>
+    <p class="help saharian-debug-explanation">
+      This is a confusing toggle button implementation, as it changes its accessibility name whenever its state changes.
+    </p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+        <span class="toggleButton js-text" role="button" aria-pressed="false">Mute audio</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="saharian-debug-wrong">
+    <h2 class="saharian-debug-h2">Toggle-button with no keyboard support</h2>
+    <p class="help saharian-debug-explanation">
+      This is a toggle button implementation that does not provide the expected keyboard support, as it is neither
+      focusable nor operable.
+    </p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+        <span class="toggleButton nokeyboard" role="button" aria-pressed="false">Mute audio</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="saharian-debug-wrong">
+    <h2 class="saharian-debug-h2">No ARIA</h2>
+    <p class="help saharian-debug-explanation">
+      This is an inaccessible toggle button implementation, as it does not provide the expected keyboard support and
+      does not expose any "toggle button" semantics to assistive technologies.
+    </p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+        <span class="toggleButton nokeyboard">Mute audio</span>
+      </div>
+    </div>
+  </section>
+
+
+  <script src="../common/example.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>

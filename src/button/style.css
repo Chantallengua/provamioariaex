@@ -1,0 +1,30 @@
+﻿button, .button {
+  cursor: pointer; 
+  width: fit-content; 
+  display: block;
+  border: solid 1px blue;
+  border-radius: 0.5em;
+  color: blue;
+  margin: 1em;
+  padding: 0.5em;
+  background-color: rgb(239, 239, 239) ;
+  font: 400 13.3333px Arial;
+}
+
+.button:hover {
+    border: 1px solid #0089e3;
+    background-image: linear-gradient(to bottom, #0089e3, #007aca);
+    box-shadow: 0px 0px 1px 1px #007aca;
+    color: white;
+	cursor: pointer;
+}
+
+button:hover {
+    border: 1px solid #0089e3;
+    background-image: linear-gradient(to bottom, #0089e3, #007aca);
+    box-shadow: 0px 0px 1px 1px #007aca;
+    color: white;
+	cursor: pointer;
+}
+
+

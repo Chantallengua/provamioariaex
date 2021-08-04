@@ -1,0 +1,125 @@
+body 
+{
+	padding: 1.5em;
+	background-color: white;
+}
+
+main 
+{
+	width: 55%;
+	border: 1px solid #c7e9ff;
+	border-radius: 5px;
+	background-image: linear-gradient(to bottom, #c7e9ff, #e0f3ff);
+	box-shadow: 0px 0px 5px 2px #e0f3ff;
+	padding: 1.5em;
+	margin: 1.5em;
+}
+
+[role="radiogroup"] {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+[role="radiogroup"]:focus {
+  outline: none;					/*new: era 1px solid hsl(0, 0%, 80%) */
+}
+
+[role="radio"] {
+  border: 2px solid transparent;
+  border-radius: 5px;
+  display: block;
+  position: relative;
+  padding: 0.125em;
+  padding-left: 1.5em;				
+  padding-right: 0.5em;
+  cursor: default;
+  outline: none;  
+}
+
+[role="radio"]::before,
+[role="radio"]::after {				
+  position: absolute;
+  top: 50%;
+  left: 7px;
+  transform: translate(-20%, -50%);
+  content: '';
+}
+
+[role="radio"]::before {
+  width: 14px;
+  height: 14px;
+  border: 1px solid hsl(0, 0%, 66%);
+  border-radius: 100%;
+  background-image: linear-gradient(to bottom, hsl(0, 0%, 93%), #fff 60%);
+}
+
+[role="radio"]:active::before {
+  background-image: linear-gradient(to bottom, hsl(0, 0%, 73%), hsl(0, 0%, 93%));
+}
+
+[role="radio"][aria-checked="true"]::before {
+  border-color: hsl(0, 0%, 62%);
+  background: hsl(0, 0%, 78%);
+  background-image: linear-gradient(to bottom, hsl(0, 0%, 78%), hsl(0, 0%, 68%));
+}
+
+[role="radio"][aria-checked="true"]::after {
+  display: block;
+  border: 0.1875em solid #fff;
+  border-radius: 100%;
+  transform: translate(25%, -50%);
+}
+
+[role="radio"][aria-checked="mixed"]:active::before,
+[role="radio"][aria-checked="true"]:active::before {
+  background-image: linear-gradient(to bottom, hsl(0, 0%, 68%), hsl(0, 0%, 78%) 60%);
+}
+
+[role="radio"]:hover::before {
+  border-color: hsl(0, 0%, 50%);
+}
+
+[role="radio"].focus {
+  border-color: hsl(0, 0%, 81%);
+  background-color: hsl(0, 0%, 98%);
+}
+
+[role="radio"]:hover {
+  background-color: hsl(0, 0%, 98%);
+}
+
+
+/*
+.radiogroup {
+  border: thin solid black;
+  padding: 1em;
+  width: fit-content; 
+}
+
+.radio {
+  width: fit-content; 
+  display: block;
+}
+
+.radio::before {
+  content: '○ ' / '';
+  font-size: 160% ;
+display: inline-block;
+}
+
+.checked::before {
+  content: '⦿︎ ' / '';
+  font-size: 140% ;
+display: inline-block;
+}
+
+#radiogroup-title {
+	font-size: 1rem; 
+	position: relative;
+	top: -2.9rem;
+	padding: 0.5rem;
+	background-color: white;  
+	font-weight: normal; 
+	margin-bottom: -2.9rem; 
+}

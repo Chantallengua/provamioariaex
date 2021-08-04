@@ -1,0 +1,27 @@
+ul, .list {
+
+}
+
+li, .item {
+	display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.item {
+	margin-left: 2.6em;
+}
+
+li:before {
+	content: '•';
+    display: inline-block;
+    width: 1em; }
+
+.item::before {
+    display: inline-block;
+    width: 1em;
+	content: '•';    
+}
+

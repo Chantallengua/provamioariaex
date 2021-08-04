@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Single line textbox</title>
+  <link rel="stylesheet" href="../css/textbox.css">
+</head>
+
+<body>
+  <main>
+    <h1>Single line textbox</h1>
+    <p class="help">
+      This is a correct single line textbox implementation with a label and help text.
+    </p>
+    <p class="warning"><strong><em>Important: <code>contenteditable</code> is used as a dirty hack to avoid messing with
+          the
+          caret in a custom text field, which is "way too much more complicated" than it should be :(. Other hacks have
+          been put in place to overcome (many) browser quirks.</em></strong></p>
+
+    <div class="wrapper">
+      <span id="fieldlabel" class="label">Message:</span>
+      <span id="example" class="field" contenteditable="true" tabindex="0" role="textbox" aria-labelledby="fieldlabel"
+        aria-describedby="fieldhelp">Foo, bar baz 42</span>
+      <p id="fieldhelp" class="help">
+        Enter your message to do nothing with.
+      </p>
+    </div>
+
+  </main>
+
+  <script type="module">
+    import Textbox from '../js/textbox.js'
+    const example = document.getElementById('example')
+    new Textbox(example)
+  </script>
+
+</body>
+
+</html>

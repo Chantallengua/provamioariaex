@@ -1,0 +1,56 @@
+﻿.saharian-debug-h1 {
+	background-image: url(desert-256.png); 
+	background-color: #ffdd00; 
+	background-size: contain;
+	background-repeat: no-repeat; 
+	text-align: center; 
+	padding: 0.5em; 
+}
+
+.saharian-debug-showcode {
+	font-size: 1rem; 
+	padding: 1em;
+	margin-left: 3em; 
+}
+
+.saharian-debug-correct .saharian-debug-showcode {
+	border: solid 1px blue;
+	background-color: #f0ffff; 
+}
+
+.saharian-debug-correct .saharian-debug-showcode::before {
+	content: "CORRECT";
+	background-color: blue; 
+	color: white; 
+	font-size: 100%; 
+	font-family: "Arial"; 
+	position: relative;
+	top: -0.8em; 
+	left: -1em;
+	padding: 0.2em;
+}
+ 
+.saharian-debug-wrong .saharian-debug-showcode {
+	border: solid 1px red;
+	background-color: #fff0f0; 
+}
+.saharian-debug-wrong .saharian-debug-showcode::before {
+	content: "INCORRECT";
+	background-color: red; 
+	color: white; 
+	font-size: 100%; 
+	font-family: "Arial"; 
+	position: relative;
+	top: -0.8em; 
+	left: -1em;
+	padding: 0.2em;
+}
+
+.saharian-debug-flex {
+	display: flex; 
+ 	justify-content: space-between ;
+ }
+
+.saharian-debug-explanation {
+	font-size: 85%; 
+	font-style: italic;}

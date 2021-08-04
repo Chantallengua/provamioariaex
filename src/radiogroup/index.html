@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Radiogroup examples</title>
+	<link rel="stylesheet" href="../common/example.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<h1 class="saharian-debug-h1">Radio Group examples</h1>
+	<p>Here you can find different radio group examples with various accessibility degrees, implemented both by using
+		native HTML Elements and attributes from the WAI-ARIA specification.</p>
+
+	<section class="saharian-debug-correct">
+		<h2 class="saharian-debug-h2">Plain HTML</h2>
+		<p class="help saharian-debug-explanation">This is an accessible radio group implementation that uses native HTML
+			elements.</p>
+		<div class="example saharian-debug-flex">
+			<div class="container">
+				<fieldset>
+					<legend>Steak doneness:</legend>
+					<label><input type="radio" name="choice">rare</label><br>
+					<label><input type="radio" name="choice">medium rare</label><br>
+					<label><input type="radio" name="choice">medium</label><br>
+					<label><input type="radio" name="choice">medium-well</label><br>
+					<label><input type="radio" name="choice">well-done</label><br>
+				</fieldset>
+			</div>
+		</div>
+	</section>
+
+	<section class="saharian-debug-correct">
+		<h2 class="saharian-debug-h2">Correct ARIA</h2>
+		<p class="help saharian-debug-explanation">This is a correct radiogroup example that leverages the WAI-ARIA
+			specification. Keyboard
+			support is implemented leveraging the "rowing tabindex" technique.</p>
+		<div class="example saharian-debug-flex">
+			<div class="container">
+				<div class="radiogroup" role="radiogroup" aria-labelledby="radiogroup1-title">
+					<h3 id="radiogroup1-title">Steak doneness:</h3>
+					<span class="radio" role="radio" aria-checked="false" tabindex="0">rare</span>
+					<span class="radio" role="radio" aria-checked="false" tabindex="-1">medium rare</span>
+					<span class="radio" role="radio" aria-checked="false" tabindex="-1">medium</span>
+					<span class="radio" role="radio" aria-checked="false" tabindex="-1">medium-well</span>
+					<span class="radio" role="radio" aria-checked="false" tabindex="-1">well-done</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="saharian-debug-wrong">
+		<h2 class="saharian-debug-h2">Missing ARIA </h2>
+		<p class="help saharian-debug-explanation">This is an inaccessible radiogroup implementation, as it doesn't expose
+			any semantics to assistive technologies
+			nor provides the expected keyboard support.</p>
+		<div class="example saharian-debug-flex">
+			<div class="container">
+				<div class="radiogroup">
+					<h3 id="radiogroup2-title">Steak doneness:</h3>
+					<span class="radio nokeyboard">rare</span>
+					<span class="radio nokeyboard">medium rare</span>
+					<span class="radio nokeyboard">medium</span>
+					<span class="radio nokeyboard">medium-well</span>
+					<span class="radio nokeyboard">well-done</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="saharian-debug-wrong">
+		<h2 class="saharian-debug-h2">Messy ARIA (1)</h2>
+		<div class="help saharian-debug-explanation">
+			<p>This is a messed up ARIA radiogroup implementation, since:</p>
+			<ul>
+				<li>it does not provide the expected keyboard support;</li>
+				<li>the selection state of each radio button is not exposed appropriately to assistive technologies (i.e. using
+					<code>aria-selected</code> instead of <code>aria-selected</code>);
+				</li>
+				<li>the grouping of radio buttons is not exposed properly to assistive technologies (i.e. the container does not
+					use the <code>radiogroup</code> role).</li>
+			</ul>
+		</div>
+		<div class="example saharian-debug-flex">
+			<div class="container">
+				<div class="radiogroup" aria-labelledby="radiogroup3-title">
+					<h3 id="radiogroup3-title">Steak doneness:</h3>
+					<span class="radio nokeyboard" role="radio" aria-selected="false">rare</span>
+					<span class="radio nokeyboard" role="radio" aria-selected="false">medium rare</span>
+					<span class="radio nokeyboard" role="radio" aria-selected="false">medium</span>
+					<span class="radio nokeyboard" role="radio" aria-selected="false">medium-well</span>
+					<span class="radio nokeyboard" role="radio" aria-selected="false">well-done</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="saharian-debug-wrong">
+		<h2 class="saharian-debug-h2">Messy ARIA (2)</h2>
+		<div class="help saharian-debug-explanation">
+			<p>
+				This is a messed up ARIA radiogroup implementation, as:
+			</p>
+			<ul>
+				<li>it doesn't provide the expected keyboard support;</li>
+				<li>the association between the radiogroup and its label is not exposed to assistive technologies;</li>
+				<li>options are not exposed as radio buttons to assistive technologies.</li>
+			</ul>
+		</div>
+		<div class="example saharian-debug-flex">
+			<div class="container">
+				<div class="radiogroup" role="radiogroup">
+					<h3 id="radiogroup4-title">Steak doneness:</h3>
+					<span class="radio nokeyboard" aria-checked="false">rare</span>
+					<span class="radio nokeyboard" aria-checked="false">medium rare</span>
+					<span class="radio nokeyboard" aria-checked="false">medium</span>
+					<span class="radio nokeyboard" aria-checked="false">medium-well</span>
+					<span class="radio nokeyboard" aria-checked="false">well-done</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<script src="../common/example.js"></script>
+	<script src="main.js"></script>
+</body>
+
+</html>

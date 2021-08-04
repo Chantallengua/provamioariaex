@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>List examples</title>
+  <link rel="stylesheet" href="../common/example.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1 class="saharian-debug-h1">List examples</h1>
+  <p>Here you can find different list examples with various accessibility degrees, implemented both by using native HTML
+    Elements and attributes from the WAI-ARIA specification.</p>
+
+  <section class="saharian-debug-correct">
+    <h2 class="saharian-debug-h2">Plain HTML</h2>
+    <p class="help saharian-debug-explanation">
+      This list implementation uses native HTML elements.
+    </p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+        <p>
+          Here are some drinks you should definitely have at least once in your life
+        </p>
+        <ul>
+          <li>prosecco</li>
+          <li>Tennents</li>
+          <li>grappa</li>
+          <li>vodka</li>
+          <li>negroni</li>
+          <li>Johnnie Walker</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="saharian-debug-correct">
+    <h2 class="saharian-debug-h2">Correct ARIA list</h2>
+    <p class="help saharian-debug-explanation">
+      This is a correct list implemented by using attributes from the WAI-ARIA specification.
+    </p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+        <p>
+          Here are some drinks you should definitely have at least once in your life
+        </p>
+        <div role="list" class="list">
+          <p role="listitem" class="item">prosecco</p>
+          <p role="listitem" class="item">Tennents</p>
+          <p role="listitem" class="item">grappa</p>
+          <p role="listitem" class="item">vodka</p>
+          <p role="listitem" class="item">negroni</p>
+          <p role="listitem" class="item">Johnnie Walker</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="saharian-debug-wrong">
+    <h2 class="saharian-debug-h2">List with messy container</h2>
+    <p class="help saharian-debug-explanation">
+      This is an ARIA implementation of a list whose container is not exposed properly to assistive technologies, while
+      its
+      elements are. </p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+        <p>
+          Here are some drinks you should definitely have at least once in your life
+        </p>
+        <div class="list">
+          <p role="listitem" class="item">prosecco</p>
+          <p role="listitem" class="item">Tennents</p>
+          <p role="listitem" class="item">grappa</p>
+          <p role="listitem" class="item">vodka</p>
+          <p role="listitem" class="item">negroni</p>
+          <p role="listitem" class="item">Johnnie Walker</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="saharian-debug-wrong">
+    <h2 class="saharian-debug-h2">List with messy elements</h2>
+    <p class="help saharian-debug-explanation">
+      This is a messed up list implementation that leverages attributes from the WAI-ARIA specification in which the
+      second and last element are not exposed properly to assistive technologies.
+    </p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+        <p>
+          Here are some drinks you should definitely have at least once in your life
+        </p>
+        <div role="list" class="list">
+          <p role="listitem" class="item">prosecco</p>
+          <p class="item">Tennents</p>
+          <p role="listitem" class="item">grappa</p>
+          <p role="listitem" class="item">vodka</p>
+          <p role="listitem" class="item">negroni</p>
+          <p class="item">Johnnie Walker</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="saharian-debug-wrong">
+    <h2 class="saharian-debug-h2">List without any "list" semantics</h2>
+    <p class="help saharian-debug-explanation">
+      This is a list implementation that does not expose any "list" semantics to assistive technologies. Note, however,
+      that its markup (a div container that contains some text paragraphs) is perfectly fine from an accessibility
+      standpoint.
+    </p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+        <p>
+          Here are some drinks you should definitely have at least once in your life
+        </p>
+        <div class="list">
+          <p class="item">prosecco</p>
+          <p class="item">Tennents</p>
+          <p class="item">grappa</p>
+          <p class="item">vodka</p>
+          <p class="item">negroni</p>
+          <p class="item">Johnnie Walker</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <script src="../common/example.js"></script>
+  
+
+</body>
+
+</html>
