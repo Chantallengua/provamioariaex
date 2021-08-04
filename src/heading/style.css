@@ -16,7 +16,7 @@ main
 }
 
 .forced-width
-{min-width: 500px;}
+{min-width: 1200px;}
 
 
 section:not(:first-of-type) {
