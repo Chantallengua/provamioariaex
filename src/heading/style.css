@@ -23,6 +23,10 @@ section:first-of-type {
 	margin-top: 2.5em;
 }
 
+.nowrap {
+ white-space: nowrap;
+}
+ 
 .heading, h1, h2, h3, h4, h5, h6 {
   display: block;
   margin: 15px 0;
