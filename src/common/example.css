@@ -11,6 +11,7 @@
 	font-size: 0.9rem; 
 	padding: 1em;
 	margin-left: 3em; 
+	max-width: fit-content;
 }
 
 .saharian-debug-correct .saharian-debug-showcode {
@@ -47,10 +48,17 @@
 }
 
 .saharian-debug-flex {
-	
+	display: flex;
  	justify-content: space-between ;
  }
 
 .saharian-debug-explanation {
 	font-size: 85%; 
-	font-style: italic;}
+	font-style: italic;
+}
+
+/*
+.saharian-debug-flex {
+	display: flex; 
+ 	justify-content: space-between ;
+ }*/
