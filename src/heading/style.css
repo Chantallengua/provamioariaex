@@ -15,6 +15,8 @@ main
 	margin: 1.5em;
 }
 
+.forced-width
+{min-width: 500px;}
 
 
 section:not(:first-of-type) {

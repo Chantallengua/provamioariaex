@@ -16,19 +16,21 @@ main
 }
 
 
-.caption {
+.caption, caption {
     margin-bottom: 1em;
     font-style: italic;
-    display: block;
+    margin-bottom: 1em;
+	display: table-caption;
+    text-align: -webkit-center;	
 }
 
-.table {
+.table, table {
 	overflow-x: auto;
 	overflow-y: hidden;
 	border-collapse: collapse;
 }
 
-.th {
+.th, th {
   display: table-cell;
   font-weight: normal;
   padding: 0.5em;
@@ -38,28 +40,31 @@ main
   text-align: center;
 }
 
-.tr {
+.tr, tr {
   display: table-row;
 }
 
-.td, .th {
+.td, td, .th, th {
   padding: 0.5em;
   display: table-cell;
   border: 1px solid hsl(0, 0%, 90%);
   min-width: 8em;
+  text-align: center;
 }
 
-.thead, .tbody {
+.thead, thead, .tbody, tbody {
   padding: 0px;
   display: table-row-group;
 }
 
 
-.tr:nth-child(odd) {
+.tr:nth-child(odd),
+tr:nth-child(odd) {
   background-color: hsl(0, 0%, 90%);
 }
 
-.tr:nth-child(even) {
+.tr:nth-child(even),
+tr:nth-child(even) {
   background-color: white;
 }
 
