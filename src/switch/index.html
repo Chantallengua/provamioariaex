@@ -3,13 +3,16 @@
 
 <head>
   <meta charset="utf-8">
-  <title>switch examples</title>
+  <title>Switch examples</title>
   <link rel="stylesheet" href="../common/example.css">
   <link rel="stylesheet" href="style.css">
+  
+  <!-- FontAwesome --> 
+  <script src="https://kit.fontawesome.com/26e52bfea1.js"></script>
 </head>
 
 <body>
-  <h1 class="saharian-debug-h1">switch examples</h1>
+  <h1 class="saharian-debug-h1">Switch examples</h1>
   <p>
     Here you can find different switch examples with various accessibility degrees, implemented both by using both
     native HTML Elements and the WAI-ARIA specification.
@@ -20,16 +23,14 @@
     <p class="help saharian-debug-explanation">This implementation uses plain HTML.</p>
     <div class="example saharian-debug-flex">
       <div class="container">
-        <form>
-          <label>
-            <input type="checkbox">
-            Dark mode
-          </label>
-        </form>
+	       <label class="switchexample">
+	          <input type="checkbox">
+	          <span class="switch"></span>
+	       </label>
       </div>
     </div>
   </section>
-
+  
   <section class="saharian-debug-correct">
     <h2 class="saharian-debug-h2">Correct ARIA Switch</h2>
     <p class="help saharian-debug-explanation">
@@ -37,11 +38,13 @@
     </p>
     <div class="example saharian-debug-flex">
       <div class="container">
-        <span role="switch" aria-checked="false" tabindex="0" class="switch">Dark mode</span>
+	    <div class="switchexample">  
+          <span role="switch" aria-checked="false" tabindex="0" class="switch"></span>
       </div>
+	  </div>
     </div>
   </section>
-
+  
   <section class="saharian-debug-wrong">
     <h2 class="saharian-debug-h2">Switch with no keyboard support</h2>
     <div class="help saharian-debug-explanation">
@@ -55,11 +58,13 @@
     </div>
     <div class="example saharian-debug-flex">
       <div class="container">
-        <span role="switch" aria-checked="false" class="switch nokeyboard">Dark mode</span>
+	    <div class="switchexample">  
+          <span role="switch" aria-checked="false" class="switch nokeyboard"></span>
+	    </div>
       </div>
     </div>
-  </section>
-
+  </section>  
+  
   <section class="saharian-debug-wrong">
     <h2 class="saharian-debug-h2">Switch with wrong state updates reporting</h2>
     <p class="help saharian-debug-explanation">
@@ -69,25 +74,13 @@
     </p>
     <div class="example saharian-debug-flex">
       <div class="container">
-        <span role="switch" aria-selected="false" tabindex="0" class="switch">Dark mode</span>
-      </div>
+	    <div class="switchexample">  
+          <span role="switch" aria-selected="false" tabindex="0" class="switch"></span>
+	    </div>
+		</div>
     </div>
-  </section>
-
-  <section class="saharian-debug-wrong">
-    <h2 class="saharian-debug-h2">Static switch</h2>
-    <p class="help saharian-debug-explanation">
-      This is a messed up switch implementation, as it exposes its role to assistive technologies, but not its state
-      updates.
-    </p>
-    <div class="example saharian-debug-flex">
-      <div class="container">
-        <span role="switch" tabindex="0" class="switch">Dark mode</span>
-      </div>
-    </div>
-  </section>
-
-
+  </section>  
+  
   <script src="../common/example.js"></script>
   <script src="main.js"></script>
 </body>
