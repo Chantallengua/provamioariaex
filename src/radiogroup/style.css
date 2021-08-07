@@ -11,13 +11,12 @@ main
 
 h3 {margin-top: 0;}
 
-
+label {display: block;}
 
 .radiogroup, fieldset {   
-    min-width: fit-content;   /* oppure min? */
     padding: 1em 1em 1em 1em;
     display: block;
-    white-space: nowrap;    /* e questo? */
+    white-space: nowrap;   
 	border: none;
 }
 
@@ -48,7 +47,7 @@ legend {
 .radio::after {				
   position: absolute;
   top: 50%;
-  left: 7px;
+  left: 5px;
   transform: translate(-20%, -50%);
   content: '';
 }
@@ -84,22 +83,16 @@ legend {
 }
 
 .radio:hover::before {
-  border-color: #DDA374;
-}
-
-.radio.focus {
-  border-color: #f6b681;
-  background-color: #FADABF;
-}
-
-.radio:hover {
   border-color: #f6b681;	
-  background-color: #FADABF;
+  border-width: 2px;
+  box-shadow: 0 0 5px #f6b681;
 }
 
-
-
-
+.radio:focus::before {
+  border-color: #f6b681;	
+  border-width: 2px;
+  box-shadow: 0 0 5px #f6b681;
+}
 
 
 
@@ -115,7 +108,6 @@ input[type="radio"] {
   margin-left: 7px;  
   margin: 0.53em;
 }
-
 
 input[type="radio"]::before,
 input[type="radio"]::after {				
@@ -155,16 +147,13 @@ input[type="radio"]:checked:active::before {
   background-image: linear-gradient(to bottom, #f6b681, #FADABF; 60%);
 }
 
-
 input[type="radio"]:hover::before {
   border-color: #f6b681;	
   border-width: 2px;
   box-shadow: 0 0 5px #f6b681;
 }
 
-/* sistema focus */
-input[type="radio"]:focus {
-	border-radius: 100%;
+input[type="radio"]:focus::before {
   border-color: #f6b681;	
   border-width: 2px;
   box-shadow: 0 0 5px #f6b681;
@@ -174,138 +163,3 @@ input[type="radio"]:focus {
 
 
 
-
-
-
-/*
-[role="radiogroup"]:focus {
-  outline: none;					new: era 1px solid hsl(0, 0%, 80%) 
-}
-*/
-
-
-/*
-GIUSTI:
-
-[role="radiogroup"] {
-   border: 1px solid #e9d1e7; 
-    background-color: #faf5fa;	
-    max-width: fit-content;
-    padding: 1em 1em 1em 1em;
-    display: block;
-    white-space: nowrap;    /* e questo? 
-}
-
-[role="radio"] {
-  border: 2px solid transparent;
-  border-radius: 5px;
-  display: block;
-  position: relative;
-  padding: 0.125em;
-  padding-left: 1.5em;				
-  padding-right: 0.5em;
-  cursor: default;
-  outline: none;  
-}
-
-[role="radio"]::before,
-[role="radio"]::after {				
-  position: absolute;
-  top: 50%;
-  left: 7px;
-  transform: translate(-20%, -50%);
-  content: '';
-}
-
-[role="radio"]::before {
-  width: 14px;
-  height: 14px;
-  border: 1px solid #DDA374;
-  border-radius: 100%;
-  background-image: linear-gradient(to bottom, hsl(0, 0%, 93%), #fff 60%);
-}
-
-[role="radio"]:active::before {
-  background-image: linear-gradient(to bottom, #f6b681, #FADABF);
-}
-
-[role="radio"][aria-checked="true"]::before {
-  border-color: #DDA374;
-  background: hsl(0, 0%, 78%);
-  background-image: linear-gradient(to bottom, #F7C49A, #f6b681);
-}
-
-[role="radio"][aria-checked="true"]::after {
-  display: block;
-  border: 0.2em solid #fff;
-  background-color: #fff;
-  border-radius: 100%;
-  transform: translate(25%, -50%);
-}
-
-[role="radio"][aria-checked="true"]:active::before {
-  background-image: linear-gradient(to bottom, #f6b681, #FADABF; 60%);
-}
-
-[role="radio"]:hover::before {
-  border-color: #DDA374;
-}
-
-[role="radio"].focus {
-  border-color: #f6b681;
-  background-color: #FADABF;
-}
-
-[role="radio"]:hover {
-  border-color: #f6b681;	
-  background-color: #FADABF;
-}
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-.radiogroup {
-  border: thin solid black;
-  padding: 1em;
-  width: fit-content; 
-}
-
-.radio {
-  width: fit-content; 
-  display: block;
-}
-
-.radio::before {
-  content: '○ ' / '';
-  font-size: 160% ;
-display: inline-block;
-}
-
-.checked::before {
-  content: '⦿︎ ' / '';
-  font-size: 140% ;
-display: inline-block;
-}
-
-#radiogroup-title {
-	font-size: 1rem; 
-	position: relative;
-	top: -2.9rem;
-	padding: 0.5rem;
-	background-color: white;  
-	font-weight: normal; 
-	margin-bottom: -2.9rem; 
-}
