@@ -58,14 +58,13 @@ input[type="radio"]::before {
 
 .radio:active::before,
 input[type="radio"]:active::before {
-  background-image: linear-gradient(to bottom, #f6b681, #FADABF);
+  background-image: linear-gradient(to bottom, #f6b681, #f18d3a);
 }
 
 .checked::before,
 input[type="radio"]:checked::before {
   border-color: #DDA374;
-  background: hsl(0, 0%, 78%);
-  background-image: linear-gradient(to bottom, #F7C49A, #f6b681);
+  background-image: linear-gradient(to bottom, #f6b681, #f18d3a);
 }
 
 .checked::after,
@@ -80,10 +79,7 @@ input[type="radio"]:checked::after {
 input[type="radio"]:checked::after {
   border: 0.23em solid #fff !important;
 }
-.checked:active::before,
-input[type="radio"]:checked:active::before {
-  background-image: linear-gradient(to bottom, #f6b681, #FADABF; 60%);
-}
+
 
 .radio:hover::before,
 .radio:focus::before,

@@ -1,14 +1,3 @@
-main 
-{
-	width: 55%;
-	border: 1px solid #c7e9ff;
-	border-radius: 5px;
-	background-image: linear-gradient(to bottom, #c7e9ff, #e0f3ff);
-	box-shadow: 0px 0px 5px 2px #e0f3ff;
-	padding: 1.5em;
-	margin: 1.5em;
-}
-
 .saharian-debug-explanation {
 margin-bottom: 2em;
 }
@@ -39,6 +28,8 @@ margin-bottom: 2em;
   border-radius: 34px;  
 }
 
+.switch:hover {box-shadow: 2px 2px 2px black;}
+
 .switch::after {
 	display: block;
     content: 'off'/'';
@@ -64,6 +55,10 @@ margin-bottom: 2em;
   box-shadow: 2px 2px 2px black;  
 }
 
+.checked:focus, .checked:hover {
+    background-color: #f18d3a;
+}
+
 .checked::after {
   content: 'on' / ''; 
 }
@@ -74,18 +69,9 @@ margin-bottom: 2em;
   transform: translateX(26px);
 }
 
-input:checked + .switch {
-  background-color: #F6B681;
-}
-
 input:checked + .switch::after {
   content: 'on' / '';
   top:2em;
-}
-
-
-input:focus + .switch {
-  box-shadow: 2px 2px 2px black;
 }
 
 input:checked + .switch::before {
@@ -96,4 +82,12 @@ input:checked + .switch::before {
 
 input:checked + .switch {
   background-color: #F6B681;
+}
+
+input:focus + .switch, input:hover + .switch {
+    box-shadow: 2px 2px 2px black;
+}
+
+input:checked:focus + .switch, input:checked:hover + .switch {
+    background-color: #f18d3a;
 }
