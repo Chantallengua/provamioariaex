@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Checkbox examples</title>
+  <link rel="stylesheet" href="../common/example.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1 class="saharian-debug-h1">Checkbox examples</h1>
+  <p>
+    Here you can find different checkbox examples with various accessibility degrees, implemented both by using both
+    native HTML Elements and the WAI-ARIA specification.
+  </p>
+
+  <section class="saharian-debug-correct">
+    <h2 class="saharian-debug-h2">Plain HTML</h2>
+    <p class="help saharian-debug-explanation">This implementation uses plain HTML.</p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+        <form>
+          <label>
+            <input type="checkbox">
+            I am not a robot
+          </label>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="saharian-debug-correct">
+    <h2 class="saharian-debug-h2">Correct ARIA checkbox</h2>
+    <p class="help saharian-debug-explanation">
+      This is a correct checkbox implementation that uses attributes from the WAI-ARIA specification.
+    </p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+        <span role="checkbox" aria-checked="false" tabindex="0" class="checkbox">I am not a robot</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="saharian-debug-wrong">
+    <h2 class="saharian-debug-h2">checkbox with no keyboard support</h2>
+    <div class="help saharian-debug-explanation">
+      <p>
+        This is a checkbox implementation that does not provide the expected keyboard support. Notably:
+      </p>
+      <ul>
+        <li>it is not keyboard focusable;</li>
+        <li>pressing the <code>Spacebar</code> or the <code>Enter</code> key won't toggle its state when focused.</li>
+      </ul>
+    </div>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+        <span role="checkbox" aria-checked="false" class="checkbox nokeyboard">I am not a robot</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="saharian-debug-wrong">
+    <h2 class="saharian-debug-h2">checkbox with wrong state updates reporting</h2>
+    <p class="help saharian-debug-explanation">
+      This is a messed up checkbox implementation, as it exposes its role to assistive technologies, but does not report state updates properly: it leverages the <code>aria-selected</code> attribute instead of <code>aria-checked</code>.
+    </p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+    <span role="checkbox" aria-selected="false" tabindex="0" class="checkbox">I am not a robot</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="saharian-debug-wrong">
+    <h2 class="saharian-debug-h2">Static checkbox</h2>
+    <p class="help saharian-debug-explanation">
+      This is a messed up checkbox implementation, as it exposes its role to assistive technologies, but not its state
+      updates.
+    </p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+        <span role="checkbox" tabindex="0" class="checkbox">I am not a robot</span>
+      </div>
+    </div>
+  </section>
+
+
+  <script src="../common/example.js"></script>
+  <script src="main.js"></script>
+</body>
+
+</html>

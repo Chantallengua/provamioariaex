@@ -21,3 +21,4 @@ li:before {
 	content: '•';    
 }
 
+p {white-space: nowrap;}

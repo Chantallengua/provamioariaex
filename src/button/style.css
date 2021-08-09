@@ -2,29 +2,25 @@
   cursor: pointer; 
   width: fit-content; 
   display: block;
-  border: solid 1px blue;
+  border: solid 1px #C49167;
   border-radius: 0.5em;
-  color: blue;
+  color: #C49167;
   margin: 1em;
-  padding: 0.5em;
-  background-color: rgb(239, 239, 239) ;
-  font: 400 13.3333px Arial;
+  padding: 0.75em;
+  background-color: #fff ;
+  font-size: 12pt;
+  box-shadow: 0 1px 2px hsl(0deg 0% 80%);
 }
 
-.button:hover {
-    border: 1px solid #0089e3;
-    background-image: linear-gradient(to bottom, #0089e3, #007aca);
-    box-shadow: 0px 0px 1px 1px #007aca;
+.button:hover, button:hover, .button:focus, button:focus {
+    border-color: #AC7F5A;
+    background-image: linear-gradient(to bottom, #DDA374, #AC7F5A);
+    box-shadow: 0px 0px 1px 1px #AC7F5A;
     color: white;
 	cursor: pointer;
+	outline: none;
 }
 
-button:hover {
-    border: 1px solid #0089e3;
-    background-image: linear-gradient(to bottom, #0089e3, #007aca);
-    box-shadow: 0px 0px 1px 1px #007aca;
-    color: white;
-	cursor: pointer;
-}
+
 
 
