@@ -1,14 +1,13 @@
-﻿body {
-background-color: #fffceb;  /* oppure 	#fffef9 */
-padding-left: 2.5em;
-padding-right: 1.5em;
-font-family: 'Roboto', sans-serif;
+﻿@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&family=Roboto:wght@300;400&display=swap');
+
+body {
+	background-color: #fffceb;  /* oppure 	#fffef9 */
+	padding-left: 2.5em;
+	padding-right: 1.5em;
+	font-family: 'Roboto', sans-serif;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&family=Roboto:wght@300;400&display=swap');
-
 .saharian-debug-h1 {
-    background-image: url(desert-256.png);
     background-color: #f6b681;
     background-size: contain;
     background-repeat: no-repeat;
@@ -20,10 +19,13 @@ font-family: 'Roboto', sans-serif;
 
 .saharian-debug-showcode {
 	font-size: 0.9rem; 
+	white-space: pre-wrap;
+	align-self: flex-start;
 	padding: 1em;
 	margin-left: 3em; 
 	max-width: fit-content;
 }
+
 
 .saharian-debug-correct .saharian-debug-showcode {
 	border: solid 1px #307e8d;
