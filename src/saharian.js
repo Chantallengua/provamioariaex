@@ -24,7 +24,7 @@ SOFTWARE.
 */
 
 var extName = "SahARIAn";
-var extVersion = "1.9.4";
+var extVersion = "1.9.3";
 var extPrefix = "$aharian";
 
 activate(false);
@@ -63,6 +63,40 @@ function activate(force) {
 					------------------------------------------------------------ */
 
 					var SaharianLevelMin = `
+[role="heading"][aria-level="1"] {
+  font-size: 36pt;
+}
+
+[role="heading"][aria-level="2"] {
+  font-size: 32pt;
+}
+
+[role="heading"][aria-level="3"] {
+  font-size: 28pt;
+}
+
+[role="heading"][aria-level="4"] {
+  font-size: 24pt;
+}
+
+[role="heading"][aria-level="5"] {
+  font-size: 20pt;
+}
+
+[role="heading"][aria-level="6"] {
+  font-size: 18pt;
+}
+
+[role="heading"][aria-level="7"] {
+  font-size: 16pt;
+}
+
+[role="heading"][aria-level="42"] {
+  font-size: 16pt;
+}
+
+
+
 body {
 		margin: 	0px;
 		border : solid #dddddd 100px;
@@ -73,57 +107,6 @@ body {
 		min-height: 100vh;
 		flex-direction: column;
 	}
-
-
-
-
-
-
-li {
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-	display: list-item !important;
-}
-
-ul {
-	border: 1px solid #e9d1e7;
-	background-color: #faf5fa;
-	margin-left: 1.9em;
-	max-width: fit-content;
-	padding-left: 0.5em;
-	padding-right: 1em;
-	display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 40px;	
-}
-
-[role="list"] {
-	border: 1px solid #e9d1e7;
-	background-color: #faf5fa;
-	margin-left: 1.9em;
-	max-width: fit-content;
-	padding-left: 0.5em;
-	padding-right: 1em;
-	display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 40px;	
-}
-
-[role="listitem"] {
-  display: list-item !important; 
-  display: block;
-}
-
-/*
-[role="listitem"]::before {
-	content: '•'; 
-} */
 
 /*
 	.main {
@@ -239,10 +222,10 @@ ul {
 		display: block;              /* aggiunto per esempi vincenzo, forse un problema per quei textbox che devono essere inline */
 	}
 	
-	/* [role="directory"],
+	[role="directory"],
 	[role="listitem"] {
 		list-style-type: none;
-	} tolto perché in esempi vincenzo bisogna mostrare i pallini */
+	}
 
 	.saharian-imageReplacement {
 		width: 66%;
@@ -340,18 +323,16 @@ input[type=submit]:focus {
 	cursor: pointer;
 }
 
-
-
 	
 /* Accordion */
 
-/* ALERT */
+/* Alert */
 [role="alert"] {
-	padding: 5px 8px;
+	padding: 5px 8px 5px 8px;
 	border: 2px solid hsl(0, 0%, 79%);
 	border-radius: 4px;
 	background: hsl(0, 0%, 94%);		
-	margin: 15px 0px;
+	margin: 15px 0 15px 0;
 	font-size: 100%;			
 	width:fit-content;
   }
@@ -360,7 +341,7 @@ input[type=submit]:focus {
 	display: none;
   }
   
-/* BREADCRUMB */
+/* Breadcrumb */
 
 nav {
   background-color: #f7f7f7;
@@ -428,81 +409,11 @@ nav a [aria-current="page"] {
   padding: 14px 16px;
 }
 
-/* BUTTON : si trova in fondo */
+/* Button : si trova in fondo */
 
-/* CAROUSEL */
+/* Carousel */
 
-/* SWITCH */
-
-
-[role="switch"]::before, input[type=checkbox]::before {
-  width: 14px;
-  height: 14px;
-  border: 1px solid hsl(0, 0%, 66%);
-  border-radius: 0.2em;
-  background-image: linear-gradient(to bottom, hsl(0, 0%, 93%), #fff 30%);
-}
-
-[role="switch"], input[type=checkbox] {
-  display: inline-block;
-  position: relative;
-  padding-left: 1.4em !important;
-  cursor: pointer;
-}
-
-[role="switch"]::before,
-[role="switch"]::after,
-input[type=checkbox]::before,
-input[type=checkbox]::after {
-  position: absolute;
-  left: 7px;
-   top: 50%;
-  transform: translate(-50%, -50%);
-  content: '';
-}
-
-[role="switch"][aria-checked="true"]::after,
-input[type=checkbox]:checked::after {
-  display: block;
-  width: 0.25em;
-  height: 0.4em;
-  border: solid #fff;
-  border-width: 0 0.125em 0.125em 0;
-  transform: translateY(-65%) translateX(-50%) rotate(45deg);
-}
-
-[role="switch"][aria-checked="true"]::before,
-input[type=checkbox]:checked::before {
-  display: block;	
-  border-color: #454545; 
-  background: #e7e7e7; 
-  background-image: linear-gradient(to bottom, hsl(0, 0%, 78%), hsl(0, 0%, 68%));
-}
-
-[role="switch"][aria-checked="true"]:active::before,
-input[type=checkbox]:checked:active::before {
-  background-image: linear-gradient(to bottom, hsl(0, 0%, 68%)), hsl(0, 0%, 78%));
-}
-
-[role="switch"]:focus::before,
-input[type=checkbox]:focus::before {
-  width: 16px;
-  height: 16px;
-  box-sizing: content-box;
-  border-color: hsl(0, 0%, 81%);
-  border-width: 3px;
-  border-radius: calc(0.2em + 3px);
-  box-shadow: inset 0 0 0 1px hsl(0, 0%, 62%);
-}
-
-[role="switch"]:active::before,
-input[type=checkbox]:active::before {
-  background-image: linear-gradient(to bottom, hsl(0, 0%, 73%), hsl(0, 0%, 93%) 30%);
-}
-
-
-
-/* CHECKBOX */
+/* Checkbox */
 /* Non riesco a inserire la regola list-style: none; */
 [role="checkbox"] {
   display: inline-block;
@@ -592,7 +503,7 @@ input[type=checkbox]:active::before {
   box-shadow: inset 0 0 0 1px hsl(0, 0%, 62%);
 }
 
-/* COMBOBOX */
+/* Combobox */
 [role=combobox] {
   display: inline-block;
   position: relative;
@@ -652,9 +563,21 @@ input[type=checkbox]:active::before {
   color: #333;
 }
 
-/* DIALOG: ALERT DIALOG AND MODAL DIALOG*/
+/* pulsante con sopra immagine: attenzione! 
+.combobox-dropdown {
+  position: absolute !important;
+  right: -68px !important;
+  top: 12px !important;
+  height: 8px !important;
+  width: 10px !important;
+  border-radius: 0 2px 2px 0 !important;
+  border: 1px solid #aaa !important;
+}
+*/
+
+/* Dialog: Alert Dialog AND Modal Dialog*/
 textarea {
-  margin: 10px 0px;
+  margin: 10px 0 10px 0;
   display: block;
   font-size: 1rem;
   line-height: 1.3;
@@ -694,8 +617,8 @@ textarea {
 }
 
 [role="alertdialog"] p, [role="dialog"] p{
-  margin: 5px;
-  padding: 10px;
+  margin: 5px 5px;
+  padding: 10px 10px;
   line-height: normal;
   font-size: 100%;
 }
@@ -720,7 +643,7 @@ textarea {
 	position: inherit;
     width: 80%;
     padding: 12px 16px;
-	margin: 8px 0px;
+	margin: 8px 0 8px 0;
 }
 
 /* PROBLEMA CON CLASSI QUI: */
@@ -750,14 +673,14 @@ textarea {
   overflow: hidden;
 }
 
-/* DATEPICKER */
+/* Datepicker */
 
-/* DISCLOSURE */
-/* DISCLOSURE FOR NAVIAGATION MENUS (3/3) */
+/* Disclosure */
+/* Disclosure for Navigation Menus (3/3) */
 /* da fare */
 
 
-/* FEED AND ROLE="ARTICLE" */
+/* Feed AND role="article" */
 [role="feed"]{
   display: inline-block;
   vertical-align: top;
@@ -779,56 +702,12 @@ textarea {
     box-shadow: 1px 1px 6px #bbb;	
 }
 
-/* HEADING */
-
-[role="heading"] {
-  font-weight: bold;
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;	
-}
-
-[role="heading"][aria-level="1"], h1 {
-  font-size: 36pt;
-}
-
-[role="heading"][aria-level="2"], h2 {
-  font-size: 32pt;
-}
-
-[role="heading"][aria-level="3"], h3 {
-  font-size: 28pt;
-}
-
-[role="heading"][aria-level="4"], h4 {
-  font-size: 24pt;
-}
-
-[role="heading"][aria-level="5"], h5 {
-  font-size: 20pt;
-}
-
-[role="heading"][aria-level="6"], h6 {
-  font-size: 18pt; 
-}
-
-[role="heading"][aria-level="7"], h7 {
-  font-size: 16pt;
-}
-
-/* LISTBOX */
+/* listbox */
 [role="listbox"] {
   min-height: 18em;
   padding: 0;
   background: white;
   border: 1px solid #aaa;
-  display: block;
-  position: relative;
-  top: -9px;
-  border-radius: 5px;
-  max-width: fit-content;  
 }
 
 [role="option"] {
@@ -839,124 +718,44 @@ textarea {
 }
 
 
-/* RADIO GROUP : html*/
-
-label {display: block;}
-
-fieldset {       
-    padding: 1em 1em 1em 1em;
-    display: block;
-    white-space: nowrap;    /* e questo? */
-	border: none;
-}
-
-legend {
-    display: block;
-    font-size: 1.17em;
-    margin-block-start: 1em;    
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-weight: bold;	
-	margin-top: 0;
-	padding-top: 1em;
-}
-
-input[type="radio"] {
-  border: 2px solid transparent;
-  border-radius: 5px;
-  position: relative;
-  padding: 0.125em;
-  padding-left: 1.5em;				
-  padding-right: 0.5em;
-  cursor: default;
-  outline: none; 
-  margin-left: 7px;  
-  margin: 0.53em;
-}
-
-input[type="radio"]::before,
-input[type="radio"]::after {				
-  position: absolute;
-  top: 50%;
-  transform: translate(-20%, -50%);
-  content: '';
-}
-
-input[type="radio"]::before {
-  width: 14px;
-  height: 14px;
-  border: 1px solid hsl(0, 0%, 75%);
-  border-radius: 100%;
-  background-image: linear-gradient(to bottom, hsl(0, 0%, 93%), #fff 60%);
-}
-
-input[type="radio"]:active::before {
-  background-image: linear-gradient(to bottom, hsl(0, 0%, 73%), hsl(0, 0%, 93%));
-}
-
-input[type="radio"]:checked::before {
-  border-color: hsl(0, 0%, 75%);
-  background: hsl(0, 0%, 78%);
-  background-image: linear-gradient(to bottom, hsl(0, 0%, 78%), hsl(0, 0%, 68%));
-}
-
-input[type="radio"]:checked::after {
-  display: block;
-  border: 0.23em solid #fff;
-  background-color: #fff;
-  border-radius: 100%;
-  transform: translate(25%, -50%);
-}
-
-input[type="radio"]:checked:active::before {
-  background-image: linear-gradient(to bottom, hsl(0, 0%, 68%), hsl(0, 0%, 78%) 60%);
-}
-
-input[type="radio"]:hover::before,
-input[type="radio"]:focus::before {
-  border-color: hsl(0, 0%, 75%);	
-  border-width: 2px;
-  box-shadow: 0 0 5px hsl(0, 0%, 75%);
-}
-
-/* RADIOGROUP: ARIA */
-
+/* radio group */
 [role="radiogroup"] {
-   border: 1px solid #d1e7e9; 
-    background-color: #f5fafa;	
-    max-width: fit-content;
-    padding: 1em 1em 1em 1em;
-    display: block;
-    white-space: nowrap;    
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+[role="radiogroup"]:focus {
+  outline: none;
 }
 
 [role="radio"] {
   border: 2px solid transparent;
   border-radius: 5px;
-  position: relative;
-  padding: 0.125em;
-  padding-left: 1.15em;		
-  padding-right: 0.5em;
-  cursor: default;
-  outline: none; 
-  margin-left: 7px;  
-  margin: 0.53em;
   display: block;
+  position: relative;
+  padding: 0.125em !important;
+  padding-left: 1.5em !important;
+  padding-right: 0.5em !important;
+  cursor: pointer;
+  outline: none;
+  width: fit-content;  
 }
 
 [role="radio"]::before,
-[role="radio"]::after {				
+[role="radio"]::after {
+  display: block;	
   position: absolute;
   top: 50%;
+  left: 7px;
   transform: translate(-20%, -50%);
   content: '';
 }
 
 [role="radio"]::before {
-  left: 0px;
   width: 14px;
   height: 14px;
-  border: 1px solid hsl(0, 0%, 75%);
+  border: 1px solid hsl(0, 0%, 66%);
   border-radius: 100%;
   background-image: linear-gradient(to bottom, hsl(0, 0%, 93%), #fff 60%);
 }
@@ -966,18 +765,16 @@ input[type="radio"]:focus::before {
 }
 
 [role="radio"][aria-checked="true"]::before {
-  border-color: hsl(0, 0%, 75%);
+  border-color: hsl(0, 0%, 62%);
   background: hsl(0, 0%, 78%);
   background-image: linear-gradient(to bottom, hsl(0, 0%, 78%), hsl(0, 0%, 68%));
 }
 
 [role="radio"][aria-checked="true"]::after {
   display: block;
-  border: 0.17em solid #fff;
-  background-color: #fff;
+  border: 0.1875em solid #fff;
   border-radius: 100%;
-  transform: translate(25%, -50%);
-  left: 0px;
+  transform: translate(17.5%, -50%);
 }
 
 [role="radio"][aria-checked="mixed"]:active::before,
@@ -985,15 +782,18 @@ input[type="radio"]:focus::before {
   background-image: linear-gradient(to bottom, hsl(0, 0%, 68%), hsl(0, 0%, 78%) 60%);
 }
 
-[role="radio"]:hover::before,
-[role="radio"]:focus::before {
-  border-color: hsl(0, 0%, 75%);	
-  border-width: 2px;
-  box-shadow: 0 0 5px hsl(0, 0%, 75%);
+[role="radio"]:hover::before {
+  border-color: hsl(0, 0%, 75%);
 }
 
+[role="radio"].focus {
+  border-color: hsl(0, 0%, 81%);
+  background-color: hsl(0, 0%, 98%);
+}
 
-
+[role="radio"]:hover {
+  background-color: hsl(0, 0%, 94%);
+}
 
 /* [role="table"] AND <table> */
 [role="table"] {
@@ -1023,7 +823,6 @@ input[type="radio"]:focus::before {
   display: table-cell;
   border: 1px solid hsl(0, 0%, 90%);
   min-width: 8em;
-  text-align: center;
 }
 
 [role="rowgroup"] {
@@ -1040,14 +839,13 @@ table caption {
 }
 
 thead {
-	display: table-row-group !important;
+	display: table-row-group;
 }
 
 table {
 	overflow-x: auto;
 	overflow-y: hidden;
 	border-collapse: collapse;
-	display: block;
 }
 
 th, thead th {
@@ -1068,7 +866,6 @@ td, th {
   display: table-cell;
   border: 1px solid hsl(0, 0%, 90%);
   min-width: 8em;
-  text-align: center;
 }
 
 tr:nth-child(even) {
@@ -1076,6 +873,10 @@ tr:nth-child(even) {
 }
 
 /* Tablist, Tabpanel */
+.tabs {
+  width: 20em;
+}
+
 [role="tablist"] {
   margin: 0 0 -0.1em;
   overflow: visible;
@@ -1189,8 +990,8 @@ tr:nth-child(even) {
   margin-top: 1em;
 }
 
-/* TREE VIEW */
-/* TREEVIEW FILE DIRECTORY (1/4), (2/4) */
+/* Tree view */
+/* Treeview File Directory (1/4), (2/4) */
 [role="tree"] {
   margin: 0;
   padding: 0;
@@ -1256,7 +1057,7 @@ tr:nth-child(even) {
 
 
 
-/* TREEGRID */
+/* Treegrid */
 [role="treegrid"] {
   width: 100%;
   white-space: nowrap;
@@ -1291,7 +1092,7 @@ tr:nth-child(even) {
 [role="treegrid"] [role="gridcell"]:focus {
   outline: 2px solid hsl(0, 0%, 75%);
   background-color: hsl(0, 0%, 90%);
-  top: -1 !important;
+  top: -1;
 }
 
 [role="treegrid"] tr > td:not(:first-child),
@@ -1335,7 +1136,7 @@ tr:nth-child(even) {
   width: 2ch;
   height: 11px;
   transition: transform 0.3s;
-  transform-origin: 5px;
+  transform-origin: 5px 5px;
 }
 [role="treegrid"] tr[aria-expanded] > td:first-child::before,
 [role="treegrid"] td[aria-expanded]:first-child::before {
@@ -1355,7 +1156,7 @@ tr:nth-child(even) {
 
 
 
-/* LINK */
+/* Link */
 [role="link"] {
   color: hsl(0, 0%, 28%);
   background: transparent;
@@ -1374,31 +1175,43 @@ tr:nth-child(even) {
   outline-offset: 0.2em;
   }
 
-/* BUTTON */
+/* Button */
 [role="button"], button, [type="button"] {
-	margin: 1em;
-    padding: 1em;
+	margin: 5px 0 5px 0;
+	padding: 15px 30px;
 	display: inline-block;
-	width: fit-content;
 	position: relative;
-	border: solid 1px hsl(0, 0%, 80%);		
-	border-radius: 0.5em;
-	color: hsl(0, 0%, 10%);
-	background-image: linear-gradient(to bottom, hsl(0, 0%, 83%), hsl(0, 0%, 70%));
-	box-shadow: 0 1px 2px hsl(0deg 0% 80%);
+	border: 1px solid hsl(0, 0%, 79%);		 /* ho messo 20% più chiaro dell'originale button aria */
+	border-radius: 5px;
+	box-shadow: 0 1px 2px hsl(0, 0%, 80%);
+	color: black;
+	background-color: hsl(0, 0%, 85%);
+	background-image: linear-gradient(to bottom, hsl(0, 0%, 77%), hsl(0, 0%, 80%));
 	cursor: pointer;
-	font-size: 12pt !important;  
 	}
 
-[role="button"]:hover, button:hover, [type="button"]:hover,
-[role="button"]:focus, button:focus, [type="button"]:focus {
+[role="button"]:hover, button:hover, [type="button"]:hover {
 	border-color: hsl(0, 0%, 34%);
 	background-color: hsl(0, 0%, 39%);
 	background-image: linear-gradient(to bottom, hsl(0, 0%, 41%), hsl(0, 0%, 34%));
 	cursor: default;
 	color: white;
 	cursor: pointer;
-	outline: none;
+	}
+
+[role="button"]:focus, button:focus, [type="button"]:focus {
+	display: inline-block;
+	position: relative;
+	border: 1px solid hsl(0, 0%, 79%);		 /* ho messo 20% più chiaro dell'originale button aria */
+	border-radius: 5px;
+	box-shadow: 0 1px 2px hsl(0, 0%, 80%);
+	color: black;
+	background-color: hsl(0, 0%, 85%);
+	background-image: linear-gradient(to bottom, hsl(0, 0%, 77%), hsl(0, 0%, 80%));
+	cursor: pointer;
+	}
+
+[role="button"]:focus, button:focus, [type="button"]:focus {
 	}
 
 [role="button"]:active, button:active, [type="button"]:active {
@@ -1409,14 +1222,13 @@ tr:nth-child(even) {
 		cursor: pointer;
 	}
 
-[role="button"][aria-pressed="true"], button[aria-pressed="true"], [type="button"][aria-pressed="true"] {		
+[role="button"][aria-pressed="true"], button[aria-pressed="true"], [type="button"][aria-pressed="true"] {
+		padding: 15px 30px;
 		border-color: hsl(0, 0%, 69%);
 		background-color: hsl(0, 0%, 45%);
 		background-image: linear-gradient(to bottom, hsl(0, 0%, 80%), hsl(0, 0%, 77%));
 		box-shadow: inset 0 3px 5px 1px hsl(0, 0%, 44%);
 	  }
-	  
-
 
 button[aria-disabled="true"],
 [role="button"][aria-disabled="true"],
@@ -1458,7 +1270,9 @@ button[aria-disabled="true"]:hover,
 		border-color: black !important;
 		left: 30px;
 	}
-	
+
+
+/* Fabio has problems, too */
 
 [id*="naptha"] {
 	display: none !important; 
@@ -1496,7 +1310,7 @@ button[aria-disabled="true"]:hover,
 /*		background-color: #fcc; */
 	}
 
-
+	
 	main, [role="main"] {
 		grid-area: center; 
 		border : solid blue 1px;
