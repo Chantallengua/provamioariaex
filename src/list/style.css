@@ -1,24 +1,13 @@
-li, .item {
-	display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+li {
+	line-height: 1.5em;
 }
 
 .item {
+	display: list-item;
 	margin-left: 2.6em;
+	line-height: 0.57em;
 }
 
-li:before {
-	content: '•';
-    display: inline-block;
-    width: 1em; }
-
-.item::before {
-    display: inline-block;
-    width: 1em;
-	content: '•';    
+.item:first-of-type {
+	margin-top: 1.5em;
 }
-
-p {white-space: nowrap;}

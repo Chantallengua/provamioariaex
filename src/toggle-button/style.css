@@ -1,5 +1,4 @@
-
-button, .toggleButton {
+label, button, .toggleButton {
   cursor: pointer; 
   width: fit-content; 
   display: block;
@@ -9,12 +8,40 @@ button, .toggleButton {
   margin: 1em;
   padding: 0.75em;
   background-color: #fff ;
-  font-size: 12pt;
   box-shadow: 0 1px 2px hsl(0deg 0% 80%);
-	font-size: 12pt !important;  
-	white-space: nowrap;
-	}
+  font-size: 12pt !important;  
+  white-space: nowrap;
+}
 
+label:hover, label:focus,
+button:hover, button:focus,
+.toggleButton:hover, .toggleButton:focus {
+    cursor: pointer;
+    outline: none;
+    background-color: #f9f4ef;
+}
+
+input {
+	appearance: none;
+	margin: 0 !important;
+}
+
+.pressed {
+    border: solid 1px #896548;
+    background-color: white;
+	box-shadow: 0 1px 2px hsl(0deg 0% 80%);
+    box-shadow: inset 0 0.1875em 0.3125em #75573d;
+    cursor: pointer;
+    color: #896548;
+    outline: none;
+}
+	 
+
+
+
+
+
+/*
 button:hover, button:focus,
 .toggleButton:hover, .toggleButton:focus {
     border-color: #AC7F5A;
@@ -25,6 +52,10 @@ button:hover, button:focus,
 	outline: none;
 	}
 
+input {
+	appearance: none;
+	margin: 0 !important;
+}
 
 .pressed, .pressed:focus, .pressed:hover {		
 		border-color: #674c36;
@@ -33,19 +64,37 @@ button:hover, button:focus,
 		cursor: pointer;
 		outline: none;
 	  }
-	  
+	 
 
-.pressed { color: black;}
+.pressed, input[type=checkbox]:checked { 
+color: black;
+}
 
 .pressed:focus, .pressed:hover {		
 		color: white;
 	  }
-
-	
-
+*/
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 
 input[type=checkbox]::before {
   width: 14px;
@@ -98,4 +147,4 @@ input[type=checkbox]:hover::before {
   border-width: 3px;
   border-radius: calc(0.2em + 3px);
   box-shadow: inset 0 0 0 1px #DDA374;
-}
+} */

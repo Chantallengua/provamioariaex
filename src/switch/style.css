@@ -2,33 +2,34 @@
 margin-bottom: 2em;
 }
 
-.switchexample {
+.switchexample, label {
   position: relative;
-  display: inline-block;
-  width: 30px;
-    height: 3px;
-	padding: 1em;
-	top: 0.5em;	
-  /* left: 2em; */
+  display: flex;
+  height: 0.1875em;
+  top: 0;
+  padding-left: 1em;
 }
 
-
 .switch {
-  display: block;
+  display: flex;
   padding: 1em;
-  position: absolute;
+  padding-left: 1.11em;
+  position: relative;
   cursor: pointer;
-  top: 0;
-  left: 0;
+  top: 2em;
+  left: -3.9em;
   right: 0;
   bottom: 0;
   background-color: #ccc;
   -webkit-transition: .4s;
   transition: .4s;
-  border-radius: 34px;  
+  border-radius: 2.125em;  
 }
 
-.switch:hover {box-shadow: 2px 2px 2px black;}
+.switch:hover, .switch:focus {
+	box-shadow: 0.125em 0.125em 0.125em black;
+	outline: none;
+}
 
 .switch::after {
 	display: block;
@@ -40,10 +41,10 @@ margin-bottom: 2em;
 .switch:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
+  height: 1.625em;
+  width: 1.625em;
+  left: 0.17em;
+  bottom: 0.19em;
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
@@ -52,11 +53,12 @@ margin-bottom: 2em;
 
 .checked {
   background-color: #f6b681;
-  box-shadow: 2px 2px 2px black;  
+  box-shadow: 0.125em 0.125em 0.125em black;
 }
 
 .checked:focus, .checked:hover {
     background-color: #f18d3a;
+	outline: none;
 }
 
 .checked::after {
@@ -64,9 +66,9 @@ margin-bottom: 2em;
 }
 
 .checked:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform: translateX(1.625em);
+  -ms-transform: translateX(1.625em);
+  transform: translateX(1.625em);
 }
 
 input:checked + .switch::after {
@@ -75,9 +77,9 @@ input:checked + .switch::after {
 }
 
 input:checked + .switch::before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform: translateX(1.625em);
+  -ms-transform: translateX(1.625em);
+  transform: translateX(1.625em);
 }
 
 input:checked + .switch {
@@ -85,9 +87,16 @@ input:checked + .switch {
 }
 
 input:focus + .switch, input:hover + .switch {
-    box-shadow: 2px 2px 2px black;
+    box-shadow: 0.125em 0.125em 0.125em black;
+	outline: none;
 }
 
 input:checked:focus + .switch, input:checked:hover + .switch {
     background-color: #f18d3a;
+	box-shadow: 0.125em 0.125em 0.125em black;
+	outline: none;
 }
+
+input {appearance: none;}
+
+.html {left: -4.5em !important;}

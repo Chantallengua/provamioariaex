@@ -23,7 +23,7 @@ legend {
 .radio,
 input[type="radio"] {
   border: 2px solid transparent;
-  border-radius: 5px;
+  border-radius: 0.3125em;
   position: relative;
   padding: 0.125em;
   padding-left: 1.5em;				
@@ -33,7 +33,7 @@ input[type="radio"] {
 }
 
 .radio { display: block;}
-input[type="radio"] { margin-left: 7px;  margin: 0.53em;  }
+input[type="radio"] { margin-left: 0.4375em;  margin: 0.53em;  } 
 
 .radio::before,
 .radio::after,
@@ -45,12 +45,21 @@ input[type="radio"]::after {
   content: '';
 }
 
-.radio::before, .radio::after {	left: 5px; }
+.radio::before, .radio::after {	left: 0.3125em; }
 
 .radio::before,
 input[type="radio"]::before {
-  width: 14px;
-  height: 14px;
+  border: 1px solid hsl(0, 0%, 66%);
+  border-radius: 100%;
+  background-image: linear-gradient(to bottom, hsl(0, 0%, 93%), #fff 60%);
+}
+.radio::before {
+  width: 0.875em; 
+  height: 0.875em; 
+}
+input[type="radio"]::before {
+  width: 1.1em; 
+  height: 1.1em;
   border: 1px solid hsl(0, 0%, 66%);
   border-radius: 100%;
   background-image: linear-gradient(to bottom, hsl(0, 0%, 93%), #fff 60%);

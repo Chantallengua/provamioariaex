@@ -36,17 +36,29 @@
 		<h2 class="saharian-debug-h2">Correct ARIA</h2>
 		<p class="help saharian-debug-explanation">This is a correct radiogroup example that leverages the WAI-ARIA
 			specification. Keyboard
-			support is implemented leveraging the "rowing tabindex" technique.</p>
+			support is implemented leveraging the "roving tabindex" technique.</p>
 		<div class="example saharian-debug-flex">
 			<div class="container">
-				<div class="radiogroup" role="radiogroup" aria-labelledby="radiogroup1-title">
+				<div class="radiogroup" role="radiogroup" aria-labelledby="radiogroup1-title" onclick="doClick1(this,event)">
 					<h3 id="radiogroup1-title">Steak doneness:</h3>
 					<span class="radio" role="radio" aria-checked="false" tabindex="0">rare</span>
-					<span class="radio" role="radio" aria-checked="false" tabindex="-1">medium rare</span>
+					<span class="radio" role="radio" aria-checked="false" tabindex="-1">medium-rare</span>
 					<span class="radio" role="radio" aria-checked="false" tabindex="-1">medium</span>
 					<span class="radio" role="radio" aria-checked="false" tabindex="-1">medium-well</span>
 					<span class="radio" role="radio" aria-checked="false" tabindex="-1">well-done</span>
 				</div>
+				<script>
+					function doClick1(el,e) {
+						Array.from(el.children).forEach( (c) => { 
+							c.ariaChecked = false
+							c.tabIndex = -1	
+							c.classList.remove('checked')
+						})
+						e.target.ariaChecked = true
+						e.target.tabIndex= 0
+						e.target.classList.add('checked')
+					}
+				</script>
 			</div>
 		</div>
 	</section>
@@ -59,14 +71,22 @@
 			nor provides the expected keyboard support.</p>
 		<div class="example saharian-debug-flex">
 			<div class="container">
-				<div class="radiogroup">
+				<div class="radiogroup" onclick="doClick2(this,event)">
 					<h3 id="radiogroup2-title">Steak doneness:</h3>
-					<span class="radio nokeyboard">rare</span>
-					<span class="radio nokeyboard">medium rare</span>
-					<span class="radio nokeyboard">medium</span>
-					<span class="radio nokeyboard">medium-well</span>
-					<span class="radio nokeyboard">well-done</span>
+					<span class="radio">rare</span>
+					<span class="radio">medium-rare</span>
+					<span class="radio">medium</span>
+					<span class="radio">medium-well</span>
+					<span class="radio">well-done</span>
 				</div>
+				<script>
+					function doClick2(el,e) {
+						Array.from(el.children).forEach( (c) => { 
+							c.classList.remove('checked')
+						})
+						e.target.classList.add('checked')
+					}
+				</script>
 			</div>
 		</div>
 	</section>
@@ -79,9 +99,7 @@
 			<ul>
 				<li>it does not provide the expected keyboard support;</li>
 				<li>the selection state of each radio button is not exposed appropriately to assistive technologies (i.e. using
-					<code>aria-selected</code> instead of <code>aria-selected</code> 
-					
-					<span style="background-color: yellow; border: 1px dashed black; padding: 0.5em;">Forse qui si intende 'aria-checked'?</span>);
+					<code>aria-selected</code> instead of <code>aria-checked</code>);
 					
 				</li>
 				<li>the grouping of radio buttons is not exposed properly to assistive technologies (i.e. the container does not
@@ -90,14 +108,26 @@
 		</div>
 		<div class="example saharian-debug-flex">
 			<div class="container">
-				<div class="radiogroup" aria-labelledby="radiogroup3-title">
+				<div class="radiogroup" role="radiogroup" aria-labelledby="radiogroup3-title" onclick="doClick3(this,event)">
 					<h3 id="radiogroup3-title">Steak doneness:</h3>
-					<span class="radio nokeyboard" role="radio" aria-selected="false">rare</span>
-					<span class="radio nokeyboard" role="radio" aria-selected="false">medium rare</span>
-					<span class="radio nokeyboard" role="radio" aria-selected="false">medium</span>
-					<span class="radio nokeyboard" role="radio" aria-selected="false">medium-well</span>
-					<span class="radio nokeyboard" role="radio" aria-selected="false">well-done</span>
+					<span class="radio" role="radio" aria-selected="false" tabindex="0">rare</span>
+					<span class="radio" role="radio" aria-selected="false" tabindex="-1">medium-rare</span>
+					<span class="radio" role="radio" aria-selected="false" tabindex="-1">medium</span>
+					<span class="radio" role="radio" aria-selected="false" tabindex="-1">medium-well</span>
+					<span class="radio" role="radio" aria-selected="false" tabindex="-1">well-done</span>
 				</div>
+				<script>
+					function doClick3(el,e) {
+						Array.from(el.children).forEach( (c) => { 
+							c.ariaSelected = false
+							c.tabIndex = -1	
+							c.classList.remove('checked')
+						})
+						e.target.ariaSelected = true
+						e.target.tabIndex= 0
+						e.target.classList.add('checked')
+					}
+				</script>
 			</div>
 		</div>
 	</section>
@@ -116,21 +146,31 @@
 		</div>
 		<div class="example saharian-debug-flex">
 			<div class="container">
-				<div class="radiogroup" role="radiogroup">
+				<div class="radiogroup" role="radiogroup" aria-labelledby="radiogroup4-title" onclick="doClick4(this,event)">
 					<h3 id="radiogroup4-title">Steak doneness:</h3>
-					<span class="radio nokeyboard" aria-checked="false">rare</span>
-					<span class="radio nokeyboard" aria-checked="false">medium rare</span>
-					<span class="radio nokeyboard" aria-checked="false">medium</span>
-					<span class="radio nokeyboard" aria-checked="false">medium-well</span>
-					<span class="radio nokeyboard" aria-checked="false">well-done</span>
+					<span class="radio" role="radio" aria-checked="false">rare</span>
+					<span class="radio" role="radio" aria-checked="false">medium-rare</span>
+					<span class="radio" role="radio" aria-checked="false">medium</span>
+					<span class="radio" role="radio" aria-checked="false">medium-well</span>
+					<span class="radio" role="radio" aria-checked="false">well-done</span>
 				</div>
+				<script>
+					function doClick4(el,e) {
+						Array.from(el.children).forEach( (c) => { 
+							c.ariaChecked = false
+							c.classList.remove('checked')
+						})
+						e.target.ariaChecked = true
+						e.target.classList.add('checked')
+					}
+				</script>
 			</div>
 		</div>
 	</section>
 
 
 	<script src="../common/example.js"></script>
-	<script src="main.js"></script>
+<!--	<script src="main.js"></script> -->
 </body>
 
 </html>

@@ -104,3 +104,49 @@ const elements = document.querySelectorAll('button, .toggleButton')
 for (let element of elements) {
   new ToggleButton(element)
 }
+
+
+
+  window.onload = function(){
+      document.getElementById("example").addEventListener( 'click', pressed);
+  }
+  
+   function pressed(){	
+   var elem = document.getElementById("example");
+   elem.classList.add("pressed");
+ }
+
+
+ 
+ 
+ /*
+    function pressed(){	
+   var elem = document.getElementById("example");
+   if  (elem.className.match("pressed") 
+   {
+       elem.classList.remove("pressed");
+	   }
+   else {
+	   elem.classList.add("pressed");
+   }
+
+ } 
+ 
+ 
+  
+  function pressed() {
+   var elem = document.getElementById("example");
+   elem.classList.toggle("pressed");
+}
+ 
+ 
+ 
+ function pressed(){	
+   var elem = document.getElementById("example");
+   elem.classList.add("pressed");
+ }*/
+    
+
+		
+
+	

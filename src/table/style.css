@@ -1,9 +1,11 @@
-.caption, caption {
+﻿.caption, caption {
     margin-bottom: 1em;
     font-style: italic;
     margin-bottom: 1em;
-	display: table-caption;
     text-align: -webkit-center;	
+}
+caption, .caption {
+	display: table-caption;
 }
 
 .table, table {
@@ -15,7 +17,6 @@
 
 
 .th, th {
-  display: table-cell;
   font-weight: normal;
   padding: 0.5em;
   background-color: #ef7f22;
@@ -24,13 +25,16 @@
   text-align: center;
 }
 
-.tr, tr {
+th, td, .th, .td {
+  display: table-cell;
+}
+
+tr, .tr {
   display: table-row;
 }
 
 .td, td, .th, th {
   padding: 0.5em;
-  display: table-cell;
   border: 1px solid #FCE9D9;
   min-width: 8em;
   text-align: center;
@@ -38,10 +42,14 @@
 
 .thead, thead, .tbody, tbody {
   padding: 0px;
-  display: table-row-group;
 }
 
-thead, .thead {  font-weight: bold;}
+thead, .thead {  
+	font-weight: bold;
+}
+thead, tbody, .thead, .tbody {
+  display: table-row-group;
+}
 
 .tr:nth-child(odd),
 tr:nth-child(odd) {
