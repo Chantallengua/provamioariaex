@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Slider examples</title>
+  <link rel="stylesheet" href="../common/example.css">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <h1 class="saharian-debug-h1">Slider examples</h1>
+  <p>Here you can find different slider examples etc.</p>
+
+  <section class="saharian-debug-correct">
+    <h2 class="saharian-debug-h2">Plain HTML</h2>
+	<!-- from "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_slider_role" -->
+    <p class="help saharian-debug-explanation">This is an accessible slider.</p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+        <label>Volume</label>
+        <input type="range"
+        id="fader"
+        min="1"
+        max="100"
+        value="50"
+        step="1"
+        aria-valuemin="1"
+        aria-valuemax="100"
+        aria-valuenow="50"
+        oninput="outputUpdate(value)">
+        <output for="fader" id="volume">50</output>
+      </div>
+    </div>
+  </section>
+  <script>
+  function outputUpdate(vol) {
+  document.querySelector('#volume').value = vol;
+}
+  </script>
+
+
+
+  
+  <section class="saharian-debug-correct">
+    <h2 class="saharian-debug-h2">Correct ARIA</h2>
+    <p class="help saharian-debug-explanation">This is an accessible button implementation that leverages the WAI-ARIA
+      specification. Please note that some JavaScript code is required to handle keyboard interactions.</p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+      <div>Volume</div>
+         <div>
+            <div class="rail" style="width: 300px;">
+               <div id="idRedValue"
+               role="slider"
+               tabindex="0"
+               class="thumb"
+               aria-valuemin="0"
+               aria-valuemax="255"
+               aria-labelledby="id"></div>
+    </div>
+    <div class="value">
+      0
+    </div>
+  </div>
+  </div>
+        
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <section class="saharian-debug-wrong">
+    <h2 class="saharian-debug-h2">Inaccessible slider</h2>
+    <p class="help saharian-debug-explanation">This is an inaccessible slider etc.</p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+                Insert here
+      </div>
+    </div>
+  </section>
+
+
+  <section class="saharian-debug-wrong">
+    <h2 class="saharian-debug-h2">Messy slider</h2>
+    <p class="help saharian-debug-explanation">This is a messy slider etc.</p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+                Insert here
+      </div>
+    </div>
+  </section>
+
+
+  <script src="../common/example.js"></script>
+ </body>
+
+</html>
