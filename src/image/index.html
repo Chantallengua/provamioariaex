@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Image examples</title>
+  <link rel="stylesheet" href="../common/example.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1 class="saharian-debug-h1">Issue: Aria-labelledby non fornisce testo alternativo alle immagini</h1>
+  <p>(N.B. Prima di tutto aggiornare Saharian da GitHub e come estensione browser)</p>
+  <p>L'alternative text viene sovraimposto correttamente se era codificato dentro un "alt" o un "aria-label" ma non se dentro un "aria-labelledby". Ecco gli esempi:</p>
+
+
+
+  <section class="saharian-debug-correct">
+    <h2 class="saharian-debug-h2">1. ALT</h2>
+    <p class="help saharian-debug-explanation">
+      Il classico. Ecco due bei Chewbacca pronti a testimoniarlo (il primo un img, il secondo un div con role="img"). Già qui sembra comunque esserci un errore in Saharian perché attivando/disattivandolo, il secondo elemento (il div con role="img") appare e scompare in modo strano.
+	  
+    </p>
+    <div class="example saharian-debug-flex">
+      <div class="container saharian-debug-dont-update">
+        <img src="chewb.jpg" aria-label="Chewbacca-alt">
+		<div class="img"  style="background-image: url(chewb.jpg);" role="img" alt="Chewbacca-alt" id="chewie"></div>
+      </div>
+    </div>
+  </section>
+  
+    <section class="saharian-debug-correct">
+    <h2 class="saharian-debug-h2">2. ARIA-LABEL</h2>
+    <p class="help saharian-debug-explanation">
+      Qui tutto a posto.
+    </p>
+    <div class="example saharian-debug-flex">
+      <div class="container saharian-debug-dont-update">
+        <img src="chewb.jpg" aria-label="Chewbacca-aria-label">
+		<div class="img"  style="background-image: url(chewb.jpg);" role="img" aria-label="Chewbacca-aria-label" id="chewie"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="saharian-debug-wrong">
+    <h2 class="saharian-debug-h2">3. ARIA-LABELLED-BY</h2>
+    <p class="help saharian-debug-explanation">
+      Aria-labelledby invece non fornisce correttamente il testo da sovraimporre all'immagine. Inoltre la prima immagine ha anche lo sfondo di avvertimento rosso, la seconda no.
+    </p>
+    <div class="example saharian-debug-flex">
+      <div class="container saharian-debug-dont-update">
+        <img src="chewb.jpg" aria-labelledby="chewie-tag">
+		<div class="img"  style="background-image: url(chewb.jpg);" role="img" aria-labelledby="chewie-tag" id="chewie"></div>
+		<span id="chewie-tag">Ecco il tag</span>
+      </div>
+    </div>
+  </section>
+  
+
+  <script src="../common/example.js"></script>
+</body>
+
+</html>

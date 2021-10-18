@@ -1,0 +1,20 @@
+
+section {
+	margin: 3em 0;
+}
+
+img:focus, .img:focus {
+	outline: 1px solid black;
+}
+
+body {background-color: aliceblue !important;}
+
+.saharian-debug-h1 {
+background-color: #66a8e3 !important;
+background-image: none !important;
+}
+
+#chewie {
+    width: 200px;
+    height: 180px;
+    background-repeat: no-repeat;}

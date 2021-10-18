@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>timer examples</title>
+  <link rel="stylesheet" href="../common/example.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1 class="saharian-debug-h1">timer examples</h1>
+  <p>Here you can find different timer examples with various accessibility degrees, implemented both by using native
+    HTML Elements and attributes from the WAI-ARIA specification.</p>
+
+  <section class="saharian-debug-correct">
+    <h2 class="saharian-debug-h2">Plain HTML</h2>
+    <p class="help saharian-debug-explanation">
+      O well... HTML does not provide any native element that matches exactly timer semantics.
+    </p>
+  </section>
+
+
+  <section class="saharian-debug-correct">
+    <h2>Correct ARIA timer</h2>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+        <button onclick="startTimer(this)">Start countdown</button>
+        <span aria-label="tempobello" id="tm1" class="timer" role="timer">Timer stopped</span>
+        
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  
+
+  <section class="saharian-debug-correct">
+    <h2 class="saharian-debug-h2">Try alert</h2>
+	<div class="container">
+<form name="signup" id="signup" method="post" action="">
+  <p id="errors" role="alert" aria-atomic="true"></p>
+  <p>
+    <label for="first">First Name (required)</label><br>
+    <input type="text" name="first" id="first">
+  </p>
+  <p>
+    <label for="last">Last Name (required)</label><br>
+    <input type="text" name="last" id="last">
+  </p>
+  <p>
+    <label for="email">Email (required)</label><br>
+    <input type="text" name="email" id="email">
+  </p>
+  <p>
+    <input type="submit" name="button" id="button" value="Submit">
+  </p>
+</form>
+</div>
+</section>
+
+
+<section class="saharian-debug-correct">
+    <h2>Status</h2>
+      <div class="container">
+        <button onclick="triggerStatus()">Trigger status</button>
+        <div role="status" id="status1" class="status"></div>
+        <script>
+          function triggerStatus() {
+            const status = document.getElementById('status1')
+            status.innerHTML = "<p><em>Nothing special</em> happened! <strong>Just a status update</strong></p>"
+          }
+        </script>
+    </div>
+  </section>
+  
+  <section>
+  <div style="height: 500px;"> A </div>
+  </section>
+
+
+
+  <script src="../common/example.js"></script>
+    <script src="http://code.jquery.com/jquery.js"></script>
+<script>
+$(document).ready(function(e) {
+	$('#signup').submit(function() {
+		$('#errors').html('');
+		if ($('#first').val() === '') {
+			$('#errors').append('<p>Please enter your first name.</p>');
+		}
+		if ($('#last').val() === '') {
+			$('#errors').append('<p>Please enter your last name.</p>');
+		} 
+		if ($('#email').val() === '') {
+			$('#errors').append('<p>Please enter your email address.</p>');
+		} 
+		return false;
+	});
+});
+</script>
+<script>
+          let tm1handle, tm1secs
+          function startTimer(trigger) {
+            trigger.disabled = true
+            trigger.focus()
+            const timer = document.getElementById('tm1')
+            tm1secs = 5
+            tm1handle = setInterval(() => {
+              timer.innerText = `${--tm1secs} seconds left`
+              if (tm1secs == -1) {
+                clearInterval(tm1handle)
+                timer.innerText = "timer stopped"
+                trigger.disabled = false
+              }
+            }, 1000)
+          }
+        </script>
+</body>
+
+</html>

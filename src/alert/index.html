@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>alert examples</title>
+  <link rel="stylesheet" href="../common/example.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1 class="saharian-debug-h1">alert examples</h1>
+  <p>Here you can find different alert examples with various accessibility degrees, implemented both by using native
+    HTML Elements and attributes from the WAI-ARIA specification.</p>
+
+  <section class="saharian-debug-correct">
+    <h2 class="saharian-debug-h2">Plain HTML</h2>
+    <p class="help saharian-debug-explanation">
+      O well... HTML does not offer any native element to represent an alert.
+    </p>
+  </section>
+
+  <section class="saharian-debug-correct">
+    <h2 class="saharian-debug-h2">Correct ARIA alert</h2>
+    <p class="help saharian-debug-explanation">
+      This is a correct alert implemented by using attributes from the WAI-ARIA specification. Alerts are triggered in
+      case of errors, warning conditions, or the arrival of information that is important in the context of the user's
+      task.
+    </p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+        <button onclick="triggerAlert()">Trigger alert</button>
+        <div role="alert" id="alert1" class="alert"></div>
+        <script>
+          function triggerAlert() {
+            const alert = document.getElementById('alert1')
+            alert.innerHTML = "<p><em>oops</em>, something happened! <strong>But what?</strong> Who knows...</p>"
+          }
+        </script>
+      </div>
+    </div>
+  </section>
+
+
+  <script src="../common/example.js"></script>
+</body>
+
+</html>

@@ -3,42 +3,78 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Slider examples</title>
+  <title>Grid examples</title>
   <link rel="stylesheet" href="../common/example.css">
   <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
-  <h1 class="saharian-debug-h1">Slider examples</h1>
-  <p>Here you can find different slider examples etc.</p>
+  <h1 class="saharian-debug-h1">Grid examples</h1>
+  <p>Here you can find different grid examples etc.</p>
 
   <section class="saharian-debug-correct">
     <h2 class="saharian-debug-h2">Plain HTML</h2>
-	<!-- from "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_slider_role" -->
-    <p class="help saharian-debug-explanation">This is an accessible slider.</p>
+	<!-- from "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Grid_Role" -->
+    <p class="help saharian-debug-explanation">This is an accessible grid.</p>
     <div class="example saharian-debug-flex">
       <div class="container">
-        <label>Volume</label>
-        <input type="range"
-        id="fader"
-        min="1"
-        max="100"
-        value="50"
-        step="1"
-        aria-valuemin="1"
-        aria-valuemax="100"
-        aria-valuenow="50"
-        oninput="outputUpdate(value)">
-        <output for="fader" id="volume">50</output>
+        <table role="grid" aria-labelledby="calendarheader">
+  <caption id="calendarheader">September 2018</caption>
+  <thead role="rowgroup">
+    <tr role="row">
+      <td></td>
+      <th role="columnheader" aria-label="Sunday">S</th>
+      <th role="columnheader" aria-label="Monday">M</th>
+      <th role="columnheader" aria-label="Tuesday">T</th>
+      <th role="columnheader" aria-label="Wednesday">W</th>
+      <th role="columnheader" aria-label="Thursday">T</th>
+      <th role="columnheader" aria-label="Friday">F</th>
+      <th role="columnheader" aria-label="Saturday">S</th>
+    </tr>
+  </thead>
+  <tbody role="rowgroup">
+    <tr role="row">
+      <th scope="row" role="rowheader">Week 35</th>
+      <td>26</td>
+      <td>27</td>
+      <td>28</td>
+      <td>29</td>
+      <td>30</td>
+      <td>31</td>
+      <td role="gridcell" tabindex="-1">1</td>
+    </tr>
+    <tr role="row">
+      <th scope="row" role="rowheader">Week 36</th>
+      <td role="gridcell" tabindex="-1">
+        2
+      </td>
+      <td role="gridcell" tabindex="-1">
+        3
+      </td>
+      <td role="gridcell" tabindex="-1">
+        4
+      </td>
+      <td role="gridcell" tabindex="-1">
+        5
+      </td>
+      <td role="gridcell" tabindex="-1">
+        6
+      </td>
+      <td role="gridcell" tabindex="-1">
+        7
+      </td>
+      <td role="gridcell" tabindex="-1">
+        8
+      </td>
+    </tr>
+    <!-- … Additional Rows … -->
+  </tbody>
+</table>
       </div>
     </div>
   </section>
-  <script>
-  function outputUpdate(vol) {
-  document.querySelector('#volume').value = vol;
-}
-  </script>
+
 
 
 

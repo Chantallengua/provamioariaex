@@ -1,0 +1,7 @@
+.status{
+display: block;
+}
+
+.alert:empty {
+  display: none;
+}

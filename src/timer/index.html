@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>status examples</title>
+  <link rel="stylesheet" href="../common/example.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1 class="saharian-debug-h1">status examples</h1>
+  <p>Here you can find different status examples with various accessibility degrees, implemented both by using native
+    HTML Elements and attributes from the WAI-ARIA specification.</p>
+
+  <section class="saharian-debug-correct">
+    <h2 class="saharian-debug-h2">Plain HTML</h2>
+    <p class="help saharian-debug-explanation">
+      O well... HTML does not offer any native element to represent a status update.
+    </p>
+  </section>
+
+  <section class="saharian-debug-correct">
+    <h2 class="saharian-debug-h2">Correct ARIA status</h2>
+    <p class="help saharian-debug-explanation">
+      This is a correct status update implemented by using attributes from the WAI-ARIA specification.
+    </p>
+    <div class="example saharian-debug-flex">
+      <div class="container">
+        <button onclick="triggerStatus()">Trigger status</button>
+        <div role="status" id="status1" class="status"></div>
+        <script>
+          function triggerStatus() {
+            const status = document.getElementById('status1')
+            status.innerHTML = "<p><em>Nothing special</em> happened! <strong>Just a status update</strong></p>"
+          }
+        </script>
+      </div>
+    </div>
+  </section>
+
+
+  <script src="../common/example.js"></script>
+</body>
+
+</html>
